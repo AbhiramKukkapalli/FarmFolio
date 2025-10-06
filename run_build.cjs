@@ -1,14 +1,14 @@
 const { execSync } = require('child_process');
-const path = require('path'); // Import the path module
+const path = require('path');
 
 // Dynamically determine the absolute path to the Vite executable
 const vitePath = path.resolve(process.cwd(), 'node_modules', '.bin', 'vite');
 
 try {
-  console.log(`Attempting to run build using absolute path: ${vitePath} build`);
+  console.log(`Attempting to run build using Node runtime: node ${vitePath} build`);
   
-  // Execute the command using the absolute path to the binary
-  execSync(`${vitePath} build`, { stdio: 'inherit' });
+  // *** THE FIX: Explicitly run the executable using 'node' ***
+  execSync(`node ${vitePath} build`, { stdio: 'inherit' });
   
   console.log('Vite build successful!');
 } catch (error) {
