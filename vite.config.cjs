@@ -5,7 +5,7 @@ const react = require('@vitejs/plugin-react')
 
 module.exports = defineConfig({
   plugins: [react()],
-  base: '/', // <-- Reverting to absolute path is necessary for Node/Express static serving
+  base: './', // <-- Reverting to absolute path is necessary for Node/Express static serving
   build: {
     rollupOptions: {
       external: [
