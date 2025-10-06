@@ -7,9 +7,10 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "vite",
     "server": "nodemon backend/server.js",
-    "build": "vite build",
+    "build": "npx vite build", // <--- CHANGE IS HERE
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "npm run build && node backend/server.js"
   },
   "dependencies": {
     "axios": "^1.12.2",
