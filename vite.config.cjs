@@ -1,16 +1,10 @@
-// goat-farm-app/vite.config.cjs (Final content)
+// goat-farm-app/vite.config.cjs
 
 const { defineConfig } = require('vite')
 const react = require('@vitejs/plugin-react')
 
+// Removing the 'build' block allows Rollup to bundle 'react-is' correctly.
 module.exports = defineConfig({
   plugins: [react()],
-  base: './', // <-- Reverting to absolute path is necessary for Node/Express static serving
-  build: {
-    rollupOptions: {
-      external: [
-        'react-is' 
-      ]
-    }
-  }
+  base: '/', 
 })
