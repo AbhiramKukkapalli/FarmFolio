@@ -1,10 +1,11 @@
+// goat-farm-app/vite.config.cjs (Final content)
+
 const { defineConfig } = require('vite')
 const react = require('@vitejs/plugin-react')
 
-// This adds the base path setting to fix asset loading on the server.
 module.exports = defineConfig({
   plugins: [react()],
-  base: './', // <--- THIS IS THE CRITICAL FIX
+  base: '/', // <-- Reverting to absolute path is necessary for Node/Express static serving
   build: {
     rollupOptions: {
       external: [
