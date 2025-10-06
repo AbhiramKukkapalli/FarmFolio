@@ -7,7 +7,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "vite",
     "server": "nodemon backend/server.js",
-    "build": "npx vite build", 
+    "build": "./node_modules/.bin/vite build", 
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "npm run build && node backend/server.js"
